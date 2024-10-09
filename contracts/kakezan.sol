@@ -1,8 +1,5 @@
 // SPDX-License-Identifier: MIT
-// ndgtlft etm.
 pragma solidity ^0.8.27;
-
-import "hardhat/console.sol"; // Hardhatのconsoleログ
 
 contract Kakezan {
 

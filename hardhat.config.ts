@@ -6,6 +6,7 @@ const { vars } = require("hardhat/config");
 const ALCHEMY_ETH_API_KEY = vars.get("ALCHEMY_ETH_API_KEY");
 const ALCHEMY_SEPOLIA_API_KEY = vars.get("ALCHEMY_SEPOLIA_API_KEY");
 const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
+const BASESCAN_API_KEY = vars.get("BASESCAN_API_KEY");
 const ACCOUNT_PRIVATE_KEY = vars.get("ACCOUNT_PRIVATE_KEY");
 const COINMARKETCAP_API_KEY = vars.get("COINMARKETCAP_API_KEY");
 
@@ -21,13 +22,18 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
+    // apiKey: BASESCAN_API_KEY,
   },
   networks: {
-    mainnet: {
+    ethereum: {
       url: `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_ETH_API_KEY}`,
       accounts: [ACCOUNT_PRIVATE_KEY],
     },
-    testnet: {
+    base: {
+      url: `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_SEPOLIA_API_KEY}`,
+      accounts: [ACCOUNT_PRIVATE_KEY],
+    },
+    sepolia: {
     url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_SEPOLIA_API_KEY}`,
     accounts: [ACCOUNT_PRIVATE_KEY],
     }
